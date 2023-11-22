@@ -28,4 +28,9 @@
   Garbage collection
  optional chaining ,Short-circuiting
 
- 
+ #Datatypes
+ Methods of primitives
+ Numbers
+Strings
+Arrays
+Array methods
