@@ -1,24 +1,3 @@
-// JavaScript Fundamentals
-
-// Hello, world!
-// Code structure
-// The modern mode, "use strict"
-// Variables
-// Data types
-// Interaction: alert, prompt, confirm
-// Type Conversions
-// Basic operators, maths
-// Comparisons
-// Conditional branching: if, '?'
-// Logical operators
-// Nullish coalescing operator '??'
-// Loops: while and for
-// The "switch" statement
-// Functions
-// Function expressions
-// Arrow functions, the basics
-// JavaScript specials
-
 // #Nullish coalescing operator '??'
 
 // The nullish coalescing operator is written as two question marks ??.
