@@ -118,3 +118,72 @@ let prices = Object.fromEntries([
 // now prices = { banana: 1, orange: 2, meat: 4 }
 
 alert(prices.orange); // 2
+
+//# SET
+let set = new Set();
+
+let ben = { name: "ben" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
+
+// visits, some users come multiple times
+set.add(ben);
+set.add(pete);
+set.add(mary);
+set.add(ben);
+set.add(mary);
+
+// set keeps only unique values
+alert(set.size); // 3
+
+for (let user of set) {
+  alert(user.name); // John (then Pete and Mary)
+}
+
+// Iteration over Set
+let setIteration = new Set(["oranges", "apples", "bananas"]);
+
+for (let value of set) alert(value);
+
+// the same with forEach:
+setIteration.forEach((value, valueAgain, set) => {
+  alert(value);
+});
+
+// #WeakMap and WeakSet
+
+let johnsen = { name: "johnsen" };
+
+// the object can be accessed, johnsen is the reference to it
+
+// overwrite the reference
+johnsen = null;
+
+// the object will be removed from memory
+let sunny = { name: "sunny" };
+
+let array = [sunny];
+
+sunny = null; // overwrite the reference
+
+// the object previously referenced by johnsen is stored inside the array
+// therefore it won't be garbage-collected
+// we can get it as array[0]
+// The first difference between Map and WeakMap is that
+//  keys must be objects, not primitive values:
+
+// Use case: additional data
+let visitsCountmap = new Map(); // map: user => visits count
+
+// increase the visits count
+function countUser(user) {
+  let count = visitsCountmap.get(user) || 0;
+  visitsCountmap.set(user, count + 1);
+}
+// 📁 main.js
+let tina = { name: "tina" };
+
+countUser(tina); // count his visits
+
+// later tina leaves us
+tina = null;
