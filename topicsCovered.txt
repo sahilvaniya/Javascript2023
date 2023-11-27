@@ -31,6 +31,12 @@
  #Datatypes
  Methods of primitives
  Numbers
-Strings
-Arrays
-Array methods
+ Strings
+ Arrays
+ Array methods
+ Date and time
+ JSON methods ,to JSON : JSON stringify,JSON parse
+
+#Promises
+Pyramid of Doom
+promise chaining
