@@ -492,3 +492,26 @@ function promisify(f, manyArgs = false) {
 // usage:
 // f = promisify(f, true);
 // f(...).then(arrayOfResults => ..., err => ...);
+
+// #microtasks
+
+// Promise handlers .then/.catch/.finally are always asynchronous.
+
+let promiseSix = Promise.resolve();
+
+promiseSix.then(() => alert("promise done!"));
+
+alert("code finished"); // this alert shows first
+
+// Unhandled rejection
+
+let promiseSeven = Promise.reject(new Error("Promise Failed!"));
+promiseSeven.catch((err) => alert("caught"));
+
+// doesn't run: error handled
+window.addEventListener("unhandledrejection", (event) => alert(event.reason));
+
+// But if we forget to add .catch, then, after the microtask queue is empty, the engine triggers the event:
+
+// Promise Failed!
+window.addEventListener("unhandledrejection", (event) => alert(event.reason));
